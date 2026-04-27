@@ -70,7 +70,7 @@ export default async function CounselorsPage({
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {counselors.map((c) => (
+            {counselors.map((c: any) => (
               <article
                 key={c.id}
                 className="rounded-xl bg-white p-4 shadow hover:shadow-md transition"
