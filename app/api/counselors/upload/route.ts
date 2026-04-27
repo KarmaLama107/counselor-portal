@@ -1,4 +1,5 @@
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 import { prisma } from "@/lib/prisma";
 import * as XLSX from "xlsx";
 
@@ -62,7 +63,14 @@ export async function POST(req: Request) {
 
     return Response.json({ success: true });
   } catch (error) {
-    console.error(error);
-    return new Response("Upload failed", { status: 500 });
+    console.error("COUNSELOR UPLOAD ERROR:", error);
+
+    return Response.json(
+      {
+        success: false,
+        error: error instanceof Error ? error.message : String(error),
+      },
+      {status: 500}
+    );
   }
 }
