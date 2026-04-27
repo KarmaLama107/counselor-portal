@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Counselor {
+  id     Int    @id @default(autoincrement())
+  name   String
+  role   String @default("Unknown")
+  email  String
+  phone  String
+  school String
+  source String  @default ("manual")
+  lastUpdated DateTime @default(now()) @updatedAt
+}
+model School {
+  id          Int      @id @default(autoincrement())
+  name        String
+  website     String
+  status      String   @default("not-started")
+  lastScanned DateTime?
+}
