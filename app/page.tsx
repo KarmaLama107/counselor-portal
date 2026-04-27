@@ -196,7 +196,7 @@ export default async function Home({ searchParams }: HomeProps) {
     </div>
   ) : (
     <div className="grid gap-4 md:grid-cols-2">
-      {schools.map((school) => (
+      {schools.map((school: any) => (
         <div key={school.id} className="rounded-2xl bg-white p-6 shadow">
           <h3 className="text-xl font-semibold text-gray-800">{school.name}</h3>
 
