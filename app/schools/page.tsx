@@ -72,7 +72,7 @@ export default async function SchoolsPage({ searchParams }: SchoolsPageProps) {
         ) : (
           /* Grid */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {schools.map((school) => (
+            {schools.map((school: any) => (
               <div
                 key={school.id}
                 className="rounded-xl bg-white p-4 shadow hover:shadow-md transition"
