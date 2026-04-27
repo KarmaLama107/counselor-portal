@@ -18,11 +18,16 @@ export async function POST(req: Request) {
     const data = XLSX.utils.sheet_to_json(sheet);
 
     for (const row of data as any[]) {
-      const name = row.name || row.Name;
-      const role = row.role || row.Role;
-      const email = row.email || row.Email;
-      const phone = row.phone || row.Phone;
-      const school = row.school || row.School || "Uploaded File";
+      const name =
+       row["Counselor Name"] || row.name || row.Name ||"";
+      const role =
+       row.role || row.Role ||"";
+      const email = 
+       row["Email Address"] || row.email || row.Email ||"";
+      const phone =
+       row["Phone Number"] || row.phone || row.Phone || "";
+      const school =
+       row["School Name"] || row.school || row.School || "Uploaded File";
 
       if (!name) continue;
 
