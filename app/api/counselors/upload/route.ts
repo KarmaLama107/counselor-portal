@@ -17,6 +17,9 @@ export async function POST(req: Request) {
 
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const data = XLSX.utils.sheet_to_json(sheet);
+    let added = 0;
+    let updated = 0;
+    let skipped = 0;
 
     for (const row of data as any[]) {
       const name =
@@ -30,7 +33,10 @@ export async function POST(req: Request) {
       const school =
        row["School Name"] || row.school || row.School || "Uploaded File";
 
-      if (!name) continue;
+      if (!name) {
+        skipped++;
+        continue;
+      }
 
       const existing = await prisma.counselor.findFirst({
         where: { name, school },
@@ -47,6 +53,7 @@ export async function POST(req: Request) {
             lastUpdated: new Date(),
           },
         });
+        updated++;
       } else {
         await prisma.counselor.create({
           data: {
@@ -58,6 +65,7 @@ export async function POST(req: Request) {
             source: "upload",
           },
         });
+        added++;
       }
     }
 
