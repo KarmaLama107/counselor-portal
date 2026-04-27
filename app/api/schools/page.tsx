@@ -29,7 +29,7 @@ export default async function SchoolsPage() {
           </div>
         ) : (
           <div className="grid gap-3 grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-            {schools.map((school) => (
+            {schools.map((school: any) => (
               <article
                 key={school.id}
                 className="rounded-xl bg-white p-4 shadow-sm border border-gray-200 hover:shadow-md transition"
