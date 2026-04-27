@@ -230,7 +230,7 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
           ) : (
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-             {counselors.map((c) => (
+             {counselors.map((c: any) => (
   <article
     key={c.id}
     className="rounded-2xl bg-white p-5 shadow-md border border-gray-200 hover:shadow-lg transition"
