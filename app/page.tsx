@@ -30,9 +30,7 @@ export default async function Home({ searchParams }: HomeProps) {
       : undefined,
     orderBy: { id: "desc" },
   });
-    const schools = await prisma.school.findMany ({
-      orderBy: { id: "desc"},
-    });
+    
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-sky-100 via-white to-pink-100 text-gray-800">
@@ -199,38 +197,7 @@ export default async function Home({ searchParams }: HomeProps) {
   <SchoolUploadForm/>
 
 </div>
-<section className="mt-10">
-  <h2 className="mb-5 text-2xl font-semibold text-gray-700">
-    Saved Schools
-  </h2>
 
-  {schools.length === 0 ? (
-    <div className="rounded-2xl bg-white p-6 text-center shadow">
-      No schools uploaded yet.
-    </div>
-  ) : (
-    <div className="grid gap-4 md:grid-cols-2">
-      {schools.map((school: any) => (
-        <div key={school.id} className="rounded-2xl bg-white p-6 shadow">
-          <h3 className="text-xl font-semibold text-gray-800">{school.name}</h3>
-
-          <p className="mt-2 text-sm text-gray-600">
-            Status: {school.status}
-          </p>
-
-          <a
-            href={school.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block rounded-xl bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-          >
-            Open Website
-          </a>
-        </div>
-      ))}
-    </div>
-  )}
-</section>
         
       </div>
     </main>
