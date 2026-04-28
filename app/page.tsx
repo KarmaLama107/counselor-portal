@@ -4,12 +4,21 @@ import SchoolUploadForm from "@/components/SchoolUploadForm";
 type HomeProps = {
   searchParams: Promise<{
     school?: string;
+    upload?: string;
+    added?: string;
+    updated?: string;
+    skipped?: string;
   }>;
 };
 
 export default async function Home({ searchParams }: HomeProps) {
   const params = await searchParams;
   const schoolQuery = params.school || "";
+
+  const uploadMessage =
+  params?.upload === "complete"
+  ? 'Upload complete: Added ${params.added}, Updated ${params.updated}, Skipped ${params.skipped}'
+  :null;
 
   const counselors = await prisma.counselor.findMany({
     where: schoolQuery
