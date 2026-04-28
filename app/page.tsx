@@ -119,6 +119,14 @@ export default async function Home({ searchParams }: HomeProps) {
                 </button>
               </div>
             </form>
+            <div className="mt-4 flex justify-end">
+            <a
+    href="/api/counselors/download"
+    className="inline-block rounded-xl bg-pink-400 px-4 py-2 font-medium text-white hover:bg-pink-500"
+  >
+    Download Counselors
+  </a>
+  </div>
           </section>
         </div>
       
@@ -149,12 +157,7 @@ export default async function Home({ searchParams }: HomeProps) {
   </form>
 </div>
 <div className="mb-6">
-  <a
-    href="/api/counselors/download"
-    className="inline-block rounded-xl bg-pink-400 px-4 py-2 font-medium text-white hover:bg-pink-500"
-  >
-    Download Counselors
-  </a>
+  
 </div>
 <div className="mb-8 rounded-2xl bg-white p-6 shadow">
   <h2 className="mb-4 text-xl font-semibold text-gray-700">
