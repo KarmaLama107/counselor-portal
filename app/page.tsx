@@ -36,6 +36,11 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-sky-100 via-white to-pink-100 text-gray-800">
+      {uploadMessage && (
+        <div className="mb-4 rounded-x1 bg-green-100 p-4 text-center text-green-700">
+          {uploadMessage}
+        </div>
+      )}
       <div className="mx-auto max-w-6xl px-6 py-10">
 
         <header className="mb-10 text-center">
