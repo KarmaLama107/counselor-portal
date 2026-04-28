@@ -117,9 +117,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 >
                   Save Counselor
                 </button>
-              </div>
-            </form>
-            <div className="mt-4 flex justify-end">
+                <div className="mt-4 flex justify-end">
             <a
     href="/api/counselors/download"
     className="inline-block rounded-xl bg-pink-400 px-4 py-2 font-medium text-white hover:bg-pink-500"
@@ -127,6 +125,9 @@ export default async function Home({ searchParams }: HomeProps) {
     Download Counselors
   </a>
   </div>
+              </div>
+            </form>
+            
           </section>
         </div>
       
