@@ -70,7 +70,7 @@ export async function POST(req: Request) {
     }
 
     return Response.redirect(
-      new URL ('/?upload=complete&added=${added}&updated=${updated}&skipped=${skipped}', req.url)
+      new URL (`/?upload=complete&added=${added}&updated=${updated}&skipped=${skipped}`, req.url)
      );
   } catch (error) {
     console.error("COUNSELOR UPLOAD ERROR:", error);

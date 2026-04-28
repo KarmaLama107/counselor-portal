@@ -17,7 +17,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   const uploadMessage =
   params?.upload === "complete"
-  ? 'Upload complete: Added ${params.added}, Updated ${params.updated}, Skipped ${params.skipped}'
+  ? `Upload complete: Added ${params.added}, Updated ${params.updated}, Skipped ${params.skipped}`
   :null;
 
   const counselors = await prisma.counselor.findMany({
