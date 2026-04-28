@@ -65,41 +65,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
         <div className="grid gap-8 lg:grid-cols-3">
 
-          {/* SEARCH */}
-          <section className="rounded-2xl bg-white p-6 shadow-md border border-sky-200">
-            <h2 className="mb-4 text-xl font-semibold text-sky-600">
-              Search by School
-            </h2>
-
-            <form method="GET" className="flex flex-col gap-3">
-              <input
-                type="text"
-                name="school"
-                placeholder="Enter school name"
-                defaultValue={schoolQuery}
-                className="rounded-xl border border-sky-200 px-4 py-3 outline-none focus:border-pink-300"
-              />
-
-              <button
-                type="submit"
-                className="rounded-xl bg-sky-400 py-3 font-medium text-white hover:bg-sky-500"
-              >
-                Search
-              </button>
-            </form>
-
-            {schoolQuery && (
-              <div className="mt-4 text-sm">
-                <p>
-                  Showing results for{" "}
-                  <span className="font-semibold">{schoolQuery}</span>
-                </p>
-                <a href="/" className="text-pink-500 hover:underline">
-                  Clear Search
-                </a>
-              </div>
-            )}
-          </section>
+          
 
           {/* ADD COUNSELOR */}
           <section className="rounded-2xl bg-white p-6 shadow-md border border-pink-200 lg:col-span-2">
