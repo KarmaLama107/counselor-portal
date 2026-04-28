@@ -231,62 +231,7 @@ export default async function Home({ searchParams }: HomeProps) {
     </div>
   )}
 </section>
-        {/* SAVED COUNSELORS */}
-        <section className="mt-10">
-
-          <h2 className="mb-5 text-2xl font-semibold text-gray-700">
-            Saved Counselors
-          </h2>
-
-          {counselors.length === 0 ? (
-            <div className="rounded-2xl bg-white p-10 text-center shadow border border-gray-200">
-              No counselors saved yet.
-            </div>
-          ) : (
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-             {counselors.map((c: any) => (
-  <article
-    key={c.id}
-    className="rounded-2xl bg-white p-5 shadow-md border border-gray-200 hover:shadow-lg transition"
-  >
-    <h3 className="text-lg font-semibold text-sky-600">
-      {c.name}
-    </h3>
-
-    <p className="text-sm text-gray-500">{c.school}</p>
-
-    <div className="mt-3 text-sm space-y-1">
-      <p>
-        <span className="font-medium">Email:</span> {c.email}
-      </p>
-
-      <p>
-        <span className="font-medium">Phone:</span> {c.phone}
-      </p>
-    </div>
-<a
-  href={`/edit/${c.id}`}
-  className="mt-4 block w-full rounded-xl bg-sky-300 py-2 text-center font-medium text-white hover:bg-sky-400"
->
-  Edit Counselor
-</a>
-    <form
-      action={`/api/counselors/delete?id=${c.id}`}
-      method="POST"
-      className="mt-4"
-    >
-      <button
-        type="submit"
-        className="w-full rounded-xl bg-pink-300 py-2 font-medium text-white hover:bg-pink-400"
-      >
-        Delete Counselor
-      </button>
-    </form>
-  </article>
-))}
-            </div>
-          )}
-        </section>
+        
       </div>
     </main>
   );
